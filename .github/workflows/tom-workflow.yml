@@ -1,0 +1,23 @@
+name: tom-workflow
+
+on:
+  push:
+    branches: develop
+  pull_request:
+    branches: main
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from lint & ${GITHUB_REF##*/}"
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from test & ${GITHUB_REF##*/}"
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "Hello from deploy & ${GITHUB_REF##*/}"
